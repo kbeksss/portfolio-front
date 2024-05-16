@@ -1,0 +1,22 @@
+.project-card {
+    max-width: 300px;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 8px;
+    background: #fff;
+    color: #000;
+}
+
+.project-card__image {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.project-card__list {
+    list-style: unset;
+    padding-left: 15px;
+}

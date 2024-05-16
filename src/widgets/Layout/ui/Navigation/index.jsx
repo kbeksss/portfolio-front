@@ -10,8 +10,8 @@ const Navigation = () => {
   return (
     <nav>
       <ul>
-        {links.map((link) => (
-          <li className={'inline-block pr-7'}>
+        {links.map((link, idx) => (
+          <li key={idx} className={"inline-block pr-7"}>
             <Link to={link.url}>{link.name}</Link>
           </li>
         ))}

@@ -6,7 +6,7 @@ import Navigation from "../Navigation";
 
 const Header = () => {
   return (
-    <header className={"header"}>
+    <header className={"header py-5 px-8"}>
       <div className={"container mx-auto"}>
         <div className={"flex items-center"}>
           <div className={""}>

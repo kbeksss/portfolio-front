@@ -1,0 +1,8 @@
+.social-link {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}

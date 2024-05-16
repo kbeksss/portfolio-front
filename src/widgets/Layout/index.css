@@ -1,0 +1,12 @@
+.whole-page {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(43, 43, 43);
+  background: radial-gradient(
+    circle,
+    rgba(43, 43, 43, 1) 0%,
+    rgba(43, 43, 43, 1) 19%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  color: #fff;
+}

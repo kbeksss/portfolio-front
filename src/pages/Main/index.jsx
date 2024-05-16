@@ -10,9 +10,9 @@ const Main = () => {
           <div className={"pr-5"}>
             <motion.h1
               className={"text-2xl md:text-4xl uppercase pb-4"}
-              initial={{ x: -500 }}
+              initial={{ x: -800 }}
               animate={{ x: 0 }}
-              transition={{ ease: "easeOut", duration: 0.8 }}
+              transition={{ ease: "easeOut", duration: 0.8, delay: 0.5 }}
             >
               Beksultan Kadyrbekov
             </motion.h1>
@@ -36,6 +36,10 @@ const Main = () => {
                 initial={{ x: 500 }}
                 animate={{ x: 0 }}
                 transition={{ ease: "easeOut", duration: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 0.2 },
+                }}
               />
             </div>
           </div>

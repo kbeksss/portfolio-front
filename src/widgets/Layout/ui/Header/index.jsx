@@ -9,7 +9,7 @@ const Header = () => {
     <header className={"header py-5 px-8"}>
       <div className={"container mx-auto"}>
         <div className={"flex items-center"}>
-          <div className={""}>
+          <div className={"pr-5"}>
             <Logo />
           </div>
           <div className={"flex-1 flex justify-center"}>

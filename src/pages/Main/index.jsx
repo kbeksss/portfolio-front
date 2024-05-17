@@ -31,7 +31,16 @@ const Main = () => {
           </div>
           <div className={"pl-4 order-first sm:order-last"}>
             <div className={"image-wrapper w-3/4 sm:w-full mx-auto px-5 pb-10"}>
-              <img className={"rounded-full"} src="/my-photo.jpeg" alt="" />
+              <motion.img
+                className={"rounded-full"}
+                src="/my-photo.jpeg"
+                alt=""
+                whileHover={{
+                  scale: 1.1,
+                }}
+                initial={{ scale: 0.3 }}
+                animate={{ scale: 1 }}
+              />
             </div>
           </div>
         </div>

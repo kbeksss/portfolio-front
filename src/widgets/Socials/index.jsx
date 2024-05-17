@@ -5,33 +5,35 @@ import linkedIn from "app/assets/socials/linked-in.png";
 import telegram from "app/assets/socials/telegram.png";
 import whatsapp from "app/assets/socials/whatsapp.png";
 import { SocialLink } from "../../shared/index.js";
+import { motion } from "framer-motion";
 
 const Socials = () => {
   return (
     <div>
-      <SocialLink
-        iconBg={gitHub}
-        link={"https://github.com/kbeksss"}
-        delay={1}
-      />
-      <SocialLink
-        iconBg={instagram}
-        link={"https://www.instagram.com/beksssk/"}
-        delay={1.3}
-      />
-      <SocialLink
-        iconBg={linkedIn}
-        link={"https://www.linkedin.com/in/kbeksss/"}
-        delay={1.6}
-      />
-      <SocialLink iconBg={telegram} link={"https://t.me/kbeksss"} delay={1.9} />
-      <SocialLink
-        iconBg={whatsapp}
-        link={"https://wa.me/+996553884808"}
-        delay={2.2}
-      />
+      {socials.map(({ link, icon }, index) => (
+        <motion.div
+          key={index}
+          className={"inline-block"}
+          initial={{ x: "-50vw" }}
+          animate={{ x: 0 }}
+          transition={{
+            ease: "easeOut",
+            delay: 0.3 * (socials.length - index + 2),
+          }}
+        >
+          <SocialLink iconBg={icon} link={link} />
+        </motion.div>
+      ))}
     </div>
   );
 };
+
+const socials = [
+  { link: "https://github.com/kbeksss", icon: gitHub },
+  { link: "https://www.instagram.com/beksssk/", icon: instagram },
+  { link: "https://www.linkedin.com/in/kbeksss/", icon: linkedIn },
+  { link: "https://t.me/kbeksss", icon: telegram },
+  { link: "https://wa.me/+996553884808", icon: whatsapp },
+];
 
 export default Socials;

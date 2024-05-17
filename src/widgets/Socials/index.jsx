@@ -14,7 +14,7 @@ const Socials = () => {
         <motion.div
           key={index}
           className={"inline-block"}
-          initial={{ x: "-50vw" }}
+          initial={{ x: '-100vw' }}
           animate={{ x: 0 }}
           transition={{
             ease: "easeOut",

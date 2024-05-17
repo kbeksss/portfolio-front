@@ -1,32 +1,27 @@
-import React, { lazy } from "react";
-import { Route, Routes, Outlet } from "react-router-dom";
+import React from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Layout } from "../widgets";
-
-const Main = lazy(() => import("./Main"));
-const Projects = lazy(() => import("./Projects"));
-const About = lazy(() => import("./About"));
-const Contacts = lazy(() => import("./Contacts"));
-const Skills = lazy(() => import("./Skills"));
+import Main from "./Main";
+import Projects from "./Projects";
+import About from "./About";
+import Contacts from "./Contacts";
+import Skills from "./Skills";
+import { AnimatePresence } from "framer-motion";
 
 const Routing = () => {
+  const location = useLocation();
   return (
-    <>
-      <Routes>
-        <Route
-          element={
-            <Layout>
-              <Outlet />
-            </Layout>
-          }
-        >
+    <Layout>
+      <AnimatePresence>
+        <Routes location={location} key={location.pathname}>
           <Route path={"/"} element={<Main />} />
           <Route path={"/projects"} element={<Projects />} />
           <Route path={"/about-me"} element={<About />} />
           <Route path={"/contacts"} element={<Contacts />} />
           <Route path={"/skills"} element={<Skills />} />
-        </Route>
-      </Routes>
-    </>
+        </Routes>
+      </AnimatePresence>
+    </Layout>
   );
 };
 

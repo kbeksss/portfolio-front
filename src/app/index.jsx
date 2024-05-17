@@ -2,11 +2,7 @@ import Routing from "pages";
 import { withProviders } from "./providers";
 
 function App() {
-  return (
-    <>
-      <Routing />
-    </>
-  );
+  return <Routing />;
 }
 
 export default withProviders(App);

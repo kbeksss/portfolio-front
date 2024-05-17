@@ -4,9 +4,9 @@ import "./index.css";
 
 const Layout = ({ children }) => {
   return (
-    <div className={"whole-page font-mono"}>
+    <div className={"whole-page font-mono"} key="layout">
       <Header />
-      <div>{children}</div>
+      {children}
       <Footer />
     </div>
   );

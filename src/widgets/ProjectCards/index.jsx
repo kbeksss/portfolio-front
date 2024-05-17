@@ -18,6 +18,8 @@ const projects = [
     start: "Dec 2018",
     end: "Feb 2019",
     img: "/projects/classlytics.jpg",
+    bgColor: "#145C9E",
+    textColor: "#fff",
   },
   {
     name: "Another project name",
@@ -25,6 +27,8 @@ const projects = [
     start: "Dec 2018",
     end: "Feb 2019",
     img: "/projects/novum.jpg",
+    bgColor: "#D6E5E3",
+    textColor: "#000",
   },
   {
     name: "One more project name",
@@ -32,6 +36,8 @@ const projects = [
     start: "Dec 2018",
     end: "Feb 2019",
     img: "/projects/richmate.jpg",
+    bgColor: "#56203D",
+    textColor: "#fff",
   },
   {
     name: "Classlytics",
@@ -39,6 +45,8 @@ const projects = [
     start: "Dec 2018",
     end: "Feb 2019",
     img: "/projects/classlytics.jpg",
+    bgColor: "#AA6DA3",
+    textColor: "#fff",
   },
   {
     name: "Another project name",
@@ -46,6 +54,8 @@ const projects = [
     start: "Dec 2018",
     end: "Feb 2019",
     img: "/projects/novum.jpg",
+    bgColor: "#E0FF4F",
+    textColor: "#000",
   },
   {
     name: "One more project name",

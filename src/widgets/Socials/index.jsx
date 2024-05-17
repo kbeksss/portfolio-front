@@ -18,7 +18,7 @@ const Socials = () => {
           animate={{ x: 0 }}
           transition={{
             ease: "easeOut",
-            delay: 0.3 * (socials.length - index + 2),
+            delay: 0.3 * (socials.length - index + 1),
           }}
         >
           <SocialLink iconBg={icon} link={link} />

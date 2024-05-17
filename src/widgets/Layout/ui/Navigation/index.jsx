@@ -11,7 +11,7 @@ const Navigation = () => {
     <nav>
       <ul>
         {links.map((link, idx) => (
-          <li key={idx} className={"inline-block pr-7"}>
+          <li key={idx} className={"inline-block pr-7 py-1"}>
             <NavLink
               to={link.url}
               className={({ isActive }) =>

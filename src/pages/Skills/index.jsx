@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import ParallaxText from "../../shared/parallax-text/index.jsx";
+import ParallaxText from "shared/ui/parallax-text";
 import { motion } from "framer-motion";
 
 const getSliced = (array, slicedTo = 7) => {
@@ -12,7 +12,6 @@ const getSliced = (array, slicedTo = 7) => {
 
 const Skills = () => {
   const slicedSkills = useMemo(() => getSliced(skills, 5), []);
-  console.log(slicedSkills);
   return (
     <motion.div
       initial={{ opacity: 0 }}

@@ -4,7 +4,7 @@ import instagram from "app/assets/socials/instagram.png";
 import linkedIn from "app/assets/socials/linked-in.png";
 import telegram from "app/assets/socials/telegram.png";
 import whatsapp from "app/assets/socials/whatsapp.png";
-import { SocialLink } from "../../shared/index.js";
+import { SocialLink } from "shared";
 import { motion } from "framer-motion";
 
 const Socials = () => {
@@ -14,7 +14,7 @@ const Socials = () => {
         <motion.div
           key={index}
           className={"inline-block"}
-          initial={{ x: '-100vw' }}
+          initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
           transition={{
             ease: "easeOut",

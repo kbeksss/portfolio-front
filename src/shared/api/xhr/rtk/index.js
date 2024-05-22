@@ -12,7 +12,15 @@ const axiosBaseQuery = async ({ url, method, data, params }) => {
   }
 };
 
+export const baseQueryWithReAuth = async (args, api) => {
+  const currentArgs = { ...args, data: args.body };
+  let result = await axiosBaseQuery(currentArgs);
+  return result;
+};
+
+export const baseQuery = baseQueryWithReAuth;
+
 export const baseApi = createApi({
-  baseQuery: axiosBaseQuery,
+  baseQuery,
   endpoints: () => ({}),
 });

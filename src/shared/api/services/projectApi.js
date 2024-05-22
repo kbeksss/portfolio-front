@@ -4,10 +4,17 @@ export const projectApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getProjects: build.query({
       query: () => ({
-        url: "/projects",
+        url: "/api/projects",
+      }),
+    }),
+    uploadProject: build.mutation({
+      query: (body) => ({
+        url: "/api/projects",
+        method: "POST",
+        body,
       }),
     }),
   }),
 });
 
-export const { useGetProjectsQuery } = projectApi;
+export const { useGetProjectsQuery, useUploadProjectMutation } = projectApi;

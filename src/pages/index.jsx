@@ -6,7 +6,10 @@ import Projects from "./Projects";
 import About from "./About";
 import Contacts from "./Contacts";
 import Skills from "./Skills";
+import Login from "./Login";
 import { AnimatePresence } from "framer-motion";
+import Admin from "./Admin";
+import ProtectedRoute from "./ProtectedRoute";
 
 const Routing = () => {
   const location = useLocation();
@@ -19,6 +22,10 @@ const Routing = () => {
           <Route path={"/about-me"} element={<About />} />
           <Route path={"/contacts"} element={<Contacts />} />
           <Route path={"/skills"} element={<Skills />} />
+          <Route path={"/login"} element={<Login />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path={"/admin"} element={<Admin />} />
+          </Route>
         </Routes>
       </AnimatePresence>
     </Layout>

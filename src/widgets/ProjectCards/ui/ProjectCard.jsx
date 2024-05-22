@@ -6,7 +6,7 @@ const ProjectCard = ({
   start,
   end,
   type,
-  img,
+  thumbImg,
   bgColor = "#fff",
   textColor = "#000",
 }) => {
@@ -17,7 +17,7 @@ const ProjectCard = ({
     >
       <div
         className={"project-card__image"}
-        style={{ backgroundImage: `url(${img})` }}
+        style={{ backgroundImage: `url(${thumbImg})` }}
       ></div>
       <h4 className={"py-2"}>{name}</h4>
       <ul className={"project-card__list"}>

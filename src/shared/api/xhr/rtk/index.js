@@ -13,6 +13,6 @@ const axiosBaseQuery = async ({ url, method, data, params }) => {
 };
 
 export const baseApi = createApi({
-  axiosBaseQuery,
+  baseQuery: axiosBaseQuery,
   endpoints: () => ({}),
 });

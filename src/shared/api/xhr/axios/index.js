@@ -1,6 +1,5 @@
 import axios from "axios";
 import { BASE_URL } from "shared/constants.js";
-console.log(BASE_URL);
 
 const axiosRequest = axios.create({
   baseURL: BASE_URL,

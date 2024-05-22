@@ -16,7 +16,7 @@ const projectsModel = createSlice({
   name: "projects",
   initialState,
   reducers: {},
-  extraReducers: {},
+  extraReducers: (builder) => {},
 });
 
 const projectsActions = projectsModel.actions;

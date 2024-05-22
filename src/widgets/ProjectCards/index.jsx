@@ -1,7 +1,10 @@
 import React from "react";
 import ProjectCard from "./ui/ProjectCard.jsx";
+import { useGetProjectsQuery } from "shared/api/services/projectApi.js";
 
 const ProjectCards = () => {
+  const res = useGetProjectsQuery();
+  console.log("res", res);
   return (
     <div className={"flex gap-5"}>
       {projects.map((project, idx) => (

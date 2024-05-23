@@ -4,7 +4,7 @@ import instagram from "app/assets/socials/instagram.png";
 import linkedIn from "app/assets/socials/linked-in.png";
 import telegram from "app/assets/socials/telegram.png";
 import whatsapp from "app/assets/socials/whatsapp.png";
-import { SocialLink } from "shared";
+import { SocialLink } from "shared/ui";
 import { motion } from "framer-motion";
 
 const Socials = () => {

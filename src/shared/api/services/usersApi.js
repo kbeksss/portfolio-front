@@ -9,7 +9,12 @@ export const usersApi = baseApi.injectEndpoints({
         body,
       }),
     }),
+    checkAdmin: build.query({
+      query: () => ({
+        url: "/api/auth/check-admin",
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation } = usersApi;
+export const { useLoginMutation, useCheckAdminQuery } = usersApi;

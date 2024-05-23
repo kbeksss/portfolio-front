@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "shared";
+import { Logo } from "shared/ui";
 import { DownloadCV } from "widgets";
 import "./index.css";
 import Navigation from "../Navigation";

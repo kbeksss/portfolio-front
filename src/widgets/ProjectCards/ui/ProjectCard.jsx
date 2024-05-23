@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import dayjs from "dayjs";
 
 const ProjectCard = ({
   name,
@@ -19,11 +20,12 @@ const ProjectCard = ({
         className={"project-card__image"}
         style={{ backgroundImage: `url(${thumbImg})` }}
       ></div>
-      <h4 className={"py-2"}>{name}</h4>
+      <h4 className={"py-2 font-bold"}>{name}</h4>
       <ul className={"project-card__list"}>
         <li>{type}</li>
         <li>
-          {start} - {end}
+          {start && dayjs(start).format("MM/YYYY")} -{" "}
+          {end && dayjs(end).format("MM/YYYY")}
         </li>
       </ul>
     </div>

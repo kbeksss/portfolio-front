@@ -3,12 +3,15 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { useUploadProjectMutation } from "shared/api/services/projectApi";
+import { useCheckAdminQuery } from "shared/api/services/usersApi";
+import { Navigate } from "react-router";
+import "./styles.css";
 
 const Admin = () => {
   const navigate = useNavigate();
+  const { error: adminError } = useCheckAdminQuery();
   const [uploadProject] = useUploadProjectMutation();
   const handleFormikSubmit = async (values) => {
-    console.log("values", values);
     const formData = new FormData();
     for (const key in values) {
       formData.append(key, values[key]);
@@ -21,9 +24,12 @@ const Admin = () => {
     }
     toast.error(error?.data?.message);
   };
+  if (adminError?.status === 403) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <div className="container mx-auto">
-      <div className="px-5 py-6">
+      <div className="admin px-5 py-6">
         <Formik
           initialValues={{
             name: "",
@@ -46,11 +52,12 @@ const Admin = () => {
             handleSubmit,
           }) => (
             <form onSubmit={handleSubmit}>
-              <div className="flex flex-col text-black">
+              <div className="flex flex-col">
                 <div className="pb-5">
                   <input
                     type="text"
                     name="name"
+                    placeholder="Project name"
                     className="w-full px-5 py-2 rounded"
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -62,6 +69,7 @@ const Admin = () => {
                   <input
                     type="text"
                     name="type"
+                    placeholder="Project type"
                     className="w-full px-5 py-2 rounded"
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -69,50 +77,66 @@ const Admin = () => {
                   />
                 </div>
                 {errors.type && touched.type && errors.type}
-                <div className="pb-5">
-                  <input
-                    type="text"
-                    name="start"
-                    className="w-full px-5 py-2 rounded"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.start}
-                  />
+                <div className="grid grid-cols-2 gap-4 pb-5">
+                  <div>
+                    <div>
+                      <label htmlFor="start">Start: </label>
+                    </div>
+                    <input
+                      type="date"
+                      name="start"
+                      id="start"
+                      className="px-2 py-2 w-full rounded"
+                      onChange={(e) =>
+                        setFieldValue(
+                          "start",
+                          new Date(e.target.value).toISOString()
+                        )
+                      }
+                    />
+                  </div>
+                  <div>
+                    <div>
+                      <label htmlFor="end">End: </label>
+                    </div>
+                    <input
+                      type="date"
+                      name="end"
+                      id="end"
+                      className="px-2 py-2 w-full rounded"
+                      onChange={(e) =>
+                        setFieldValue(
+                          "end",
+                          new Date(e.target.value).toISOString()
+                        )
+                      }
+                    />
+                  </div>
                 </div>
                 {errors.start && touched.start && errors.start}
-                <div className="pb-5">
-                  <input
-                    type="text"
-                    name="end"
-                    className="w-full px-5 py-2 rounded"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.end}
-                  />
-                </div>
                 {errors.end && touched.end && errors.end}
-                <div className="pb-5">
+                <div className="grid grid-cols-2 pb-5 gap-4">
                   <input
                     type="text"
                     name="bgColor"
                     className="w-full px-5 py-2 rounded"
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    placeholder="background color"
                     value={values.bgColor}
                   />
-                </div>
-                {errors.bgColor && touched.bgColor && errors.bgColor}
-                <div className="pb-5">
+                  {errors.bgColor && touched.bgColor && errors.bgColor}
                   <input
                     type="text"
                     name="textColor"
                     className="w-full px-5 py-2 rounded"
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    placeholder="text color"
                     value={values.textColor}
                   />
+                  {errors.textColor && touched.textColor && errors.textColor}
                 </div>
-                {errors.textColor && touched.textColor && errors.textColor}
                 <div className="pb-5">
                   <input
                     type="file"

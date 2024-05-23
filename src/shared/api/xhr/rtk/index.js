@@ -1,5 +1,6 @@
 import { axiosRequest } from "../axios";
 import { createApi } from "@reduxjs/toolkit/query/react";
+import { removeTokens } from "../helpers";
 
 const axiosBaseQuery = async ({ url, method, data, params }) => {
   try {
@@ -15,6 +16,9 @@ const axiosBaseQuery = async ({ url, method, data, params }) => {
 export const baseQueryWithReAuth = async (args, api) => {
   const currentArgs = { ...args, data: args.body };
   let result = await axiosBaseQuery(currentArgs);
+  if (result.error && result.error.status === 403) {
+    removeTokens();
+  }
   return result;
 };
 
